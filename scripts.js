@@ -25,11 +25,20 @@ document.addEventListener("DOMContentLoaded", () => {
 // Hamburger menu
 function toggleMenu() {
     const hamburger = document.querySelector(".hamburger");
-    const navbar = document.getElementById("navbar")
-    // Add the active class to move the lines to the center
+    const navbar = document.getElementById("navbar");
+    const body = document.body; // Get the body element
+
+    // Toggle the active class for the navbar and hamburger
     navbar.classList.toggle("active");
     hamburger.classList.toggle("active");
-    
+
+    // Disable scrolling when the navbar is active
+    if (navbar.classList.contains("active")) {
+        body.classList.add("no-scroll");
+    } else {
+        body.classList.remove("no-scroll");
+    }
+
     // Add a delay before rotating to create the two-step effect
     setTimeout(() => {
         const lines = document.querySelectorAll(".hamburger .line");
