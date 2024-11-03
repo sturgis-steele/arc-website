@@ -254,7 +254,7 @@ button {
     }
 
     #logo {
-        display: none;
+        display: flex;
     } 
 
     #navbar {
